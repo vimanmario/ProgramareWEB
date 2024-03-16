@@ -1,25 +1,13 @@
-# netlify.toml
-
 [build]
-  #command = "npm run build"  # sau comanda pe care o folosești pentru a construi proiectul tău
-  publish = "public"  # directorul în care se află fișierele statice
-
-[[redirects]]
-  from = "/*"
-  to = "/public/:splat"
-  status = 200
+  publish = "public"
+  #command = "npm run build" # sau orice altă comandă de construire necesară
 
 [[headers]]
-  for = "/CSS/*"
-    [headers.values]
+  for = "/*.css"
+  [headers.values]
     Content-Type = "text/css"
 
 [[headers]]
-  for = "/HTML/*"
-    [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-
-[[headers]]
-  for = "/JS/*"
-    [headers.values]
-    Content-Type = "text/javascript"
+  for = "/*.js"
+  [headers.values]
+    Content-Type = "application/javascript"
