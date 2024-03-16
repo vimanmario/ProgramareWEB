@@ -10,14 +10,14 @@
   status = 200
 
 [[headers]]
-  for = "/HTML/*"
-    [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-
-[[headers]]
   for = "/CSS/*"
     [headers.values]
     Content-Type = "text/css"
+
+[[headers]]
+  for = "/HTML/*"
+    [headers.values]
+    Content-Type = "text/html; charset=utf-8"
 
 [[headers]]
   for = "/JS/*"
