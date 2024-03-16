@@ -1,13 +1,5 @@
 [build]
-  publish = "public"
-  command = "npm run build" # sau orice altă comandă de construire necesară
+#command = "npm run build"
+# comanda pentru a construi proiectul dvs.
 
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Content-Type = "text/css"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Content-Type = "application/javascript"
+publish = "public" # directorul pentru fișierele statice
