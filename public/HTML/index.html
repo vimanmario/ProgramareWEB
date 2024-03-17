@@ -24,7 +24,15 @@
                 <li><a href="orarulGrupei.html">Orarul grupei</a></li>
             </ul>
         </li>
-        <li><a href="#" class="nav-link" onclick="toggleAndHighlight(this)">Lab 3</a></li>
+        <!-- Container pentru Lab 3 -->
+        <li id="lab3-container" class="nav-item">
+            <a href="#" class="nav-link" onmouseover="showOptions('lab3-container')" onmouseout="hideOptions('lab3-container')">Lab 3</a>
+            <!-- Opțiuni pentru Lab 3 -->
+            <ul id="lab3-options" class="dropdown-options" onmouseover="showOptions('lab3-container')" onmouseout="hideOptions('lab3-container')">
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="inventar.html">Inventar</a></li>
+            </ul>
+        </li>
         <li><a href="#" class="nav-link" onclick="toggleAndHighlight(this)">Lab 4</a></li>
         <li><a href="#" class="nav-link" onclick="toggleAndHighlight(this)">Lab 5</a></li>
         <li><a href="#" class="nav-link" onclick="toggleAndHighlight(this)">Lab 6</a></li>
@@ -63,7 +71,6 @@
     <div class="item  left-text">12. Websockets</div>
     <div class="item  left-text">13. React</div>
     <div class="item  left-text">14. W3s</div>
-
 </section>
 
 <!-- Al Doilea Grid -->

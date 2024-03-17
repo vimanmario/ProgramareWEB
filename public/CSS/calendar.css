@@ -1,0 +1,15 @@
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Afișează 3 luni pe rând */
+    gap: 20px;
+}
+
+.month {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.day {
+    padding: 10px;
+    border: 1px solid #ccc;
+}

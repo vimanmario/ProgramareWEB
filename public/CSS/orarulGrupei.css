@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    padding: 0;
+}
+
+.scrollable {
+    overflow-y: auto; /* Adăugarea unei bare de derulare verticale în cazul în care tabelul este mai larg decât fereastra */
+    max-height: 80vh;
+}
+
+table {
+    /* width: auto; */ /* Eliminat pentru a bloca extinderea pe orizontală */
+    border-collapse: collapse;
+    /*overflow-x: auto;*/ /* Activare scroll orizontal */
+    overflow-y: auto;
+    height: 100%;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 8px; /* Redus padding-ul pentru a face celulele mai mici */
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.group-name {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Stiluri pentru a împărți conținutul unei celule în două */
+.split-cell {
+    position: relative;
+}
+
+.split-content {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 50%; /* fiecare activitate ocupă jumătate din înălțimea celulei */
+    text-align: center;
+    border-bottom: 1px solid #ccc; /* adăugăm o linie între activități */
+}
+
+/* stil pentru a face prima activitate să fie sus și a doua activitate să fie jos */
+.split-content:nth-child(2) {
+    top: 50%;
+}
