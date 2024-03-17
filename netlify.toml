@@ -1,7 +1,7 @@
 # netlify.toml
 
 [build]
-   # command = "node build.js"
+    #command = "node build.js"  # comanda pentru a construi proiectul folosind Node.js
     publish = "public"  # directorul în care se află fișierele statice
 
 [[redirects]]
