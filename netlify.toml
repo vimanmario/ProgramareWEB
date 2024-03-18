@@ -3,9 +3,6 @@
 [build]
     #command = "node build.js"  # comanda pentru a construi proiectul folosind Node.js
     publish = "public"  # directorul în care se află fișierele statice
-    publish = "public/HTML"
-    publish = "public/JS"
-    publish = "public/CSS"
 
 [[redirects]]
     from = "/HTML/*"
