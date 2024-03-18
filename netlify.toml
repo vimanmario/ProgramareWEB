@@ -6,3 +6,33 @@
     publish = "public/HTML"
     publish = "public/JS"
     publish = "public/CSS"
+
+[[redirects]]
+    from = "/HTML/*"
+    to = "/public/HTML/:splat"
+    status = 200
+
+[[redirects]]
+    from = "/CSS/*"
+    to = "/public/CSS/:splat"
+    status = 200
+
+[[redirects]]
+    from = "/JS/*"
+    to = "/public/JS/:splat"
+    status = 200
+
+[[headers]]
+    for = "/CSS/*"
+        [headers.values]
+        Content-Type = "text/css"
+
+[[headers]]
+    for = "/HTML/*"
+        [headers.values]
+        Content-Type = "text/html; charset=utf-8"
+
+[[headers]]
+    for = "/JS/*"
+        [headers.values]
+        Content-Type = "text/javascript"
