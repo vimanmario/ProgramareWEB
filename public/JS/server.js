@@ -8,7 +8,7 @@ const port = process.env.PORT || 3029;
 // Creăm un server HTTP
 const server = http.createServer((req, res) => {
     // Citim fișierul HTML
-    fs.readFile('public/index.html', (err, data) => {
+    fs.readFile('public/HTML/index.html', (err, data) => {
         if (err) {
             res.writeHead(500, {'Content-Type': 'text/plain'});
             res.end('Internal Server Error');
