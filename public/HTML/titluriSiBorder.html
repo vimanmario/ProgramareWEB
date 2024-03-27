@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titluri de cărți</title>
+    <style>
+        /* Eliminarea marcatorilor din listă pentru ambele variante */
+        .bookList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* Stil pentru secțiunea de text */
+        #textSection {
+            border-top: 2px solid black; /* Border deasupra secțiunii */
+            padding: 10px;
+            margin-top: 20px;
+            background-color: lightblue; /* Culoare de fundal inițială */
+            transition: background-color 0.5s; /* Efect de tranziție pentru schimbarea culorii de fundal */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Secțiunea de text -->
+<div id="textSection">
+    <p>Aceasta este secțiunea de text.</p>
+</div>
+
+<h2>Titluri de cărți - Sincron</h2>
+
+<ul id="bookList" class="bookList">
+    <!-- Aici vor fi adăugate titlurile de cărți pentru varianta sincronă -->
+</ul>
+
+<h2>Titluri de cărți - Asincron</h2>
+
+<ul id="asyncBookList" class="bookList">
+    <!-- Aici vor fi adăugate titlurile de cărți pentru varianta asincronă -->
+</ul>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Definirea array-ului cu titlurile de cărți
+        var carti = [
+            "1. Cronicile din Narnia",
+            "2. Moby Dick",
+            "3. Harry Potter și piatra filozofală",
+            "4. Anna Karenina",
+            "5. Domnișoara de la țară"
+        ];
+
+        // Referința către elementul <ul> în care vom afișa titlurile de cărți (varianta sincronă)
+        var listaCarti = document.getElementById("bookList");
+
+        // Parcurgerea array-ului și adăugarea fiecărui titlu de carte în lista HTML (varianta sincronă)
+        carti.forEach(function(titlu) {
+            var listItem = document.createElement("li"); // Crearea unui element <li> pentru fiecare titlu
+            listItem.textContent = titlu; // Setarea textului fiecărui element <li> cu un titlu de carte
+            listaCarti.appendChild(listItem); // Adăugarea elementului <li> în lista de cărți (varianta sincronă)
+        });
+
+        // Referința către elementul <ul> în care vom afișa titlurile de cărți (varianta asincronă)
+        var listaCartiAsincron = document.getElementById("asyncBookList");
+
+        // Afisarea fiecarui titlu de carte în mod asincron cu o întârziere de 2 secunde
+        carti.forEach(function(titlu, index) {
+            setTimeout(function() {
+                var listItem = document.createElement("li"); // Crearea unui element <li> pentru fiecare titlu
+                listItem.textContent = titlu; // Setarea textului fiecărui element <li> cu un titlu de carte
+                listaCartiAsincron.appendChild(listItem); // Adăugarea elementului <li> în lista de cărți (varianta asincronă)
+            }, 2000 * (index + 1)); // Index + 1 pentru a asigura o întârziere de 2 secunde între fiecare afișare
+        });
+
+        // Schimbarea culorii de fundal după 3 secunde pentru secțiunea de text
+        setTimeout(function() {
+            document.getElementById("textSection").style.backgroundColor = "lightgreen";
+        }, 3000);
+    });
+</script>
+
+</body>
+</html>
