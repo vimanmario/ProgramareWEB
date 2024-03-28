@@ -14,6 +14,9 @@
         /* Stil pentru secțiunea de text */
         #textSection {
             border-top: 2px solid black; /* Border deasupra secțiunii */
+            border-left: 2px solid black;
+            border-right: 2px solid black;
+            border-bottom: 2px solid black;
             padding: 10px;
             margin-top: 20px;
             background-color: lightblue; /* Culoare de fundal inițială */
@@ -25,7 +28,7 @@
 
 <!-- Secțiunea de text -->
 <div id="textSection">
-    <p>Aceasta este secțiunea de text.</p>
+    <p>Border care se schimba la fiecare 3s.</p>
 </div>
 
 <h2>Titluri de cărți - Sincron</h2>
@@ -73,9 +76,14 @@
             }, 2000 * (index + 1)); // Index + 1 pentru a asigura o întârziere de 2 secunde între fiecare afișare
         });
 
-        // Schimbarea culorii de fundal după 3 secunde pentru secțiunea de text
-        setTimeout(function() {
-            document.getElementById("textSection").style.backgroundColor = "lightgreen";
+        // Schimbarea culorii de fundal la fiecare 3 secunde pentru secțiunea de text
+        var colors = ["lightblue", "lightgreen", "lightcoral", "lightyellow", "lightsalmon", "lightcyan", "lightpink"];
+        var colorIndex = 0;
+
+        setInterval(function() {
+            var textSection = document.getElementById("textSection");
+            textSection.style.backgroundColor = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length;
         }, 3000);
     });
 </script>
