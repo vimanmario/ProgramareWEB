@@ -1,0 +1,65 @@
+#picFrame {
+    position: relative;
+    overflow: hidden;
+    margin: 100px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 550px;
+    outline: solid 2px black;
+    position: relative; /* Adăugat */
+}
+
+.pic {
+    position: absolute;
+    transition: left 0.3s;
+    width: 100%; /* Adăugat */
+    height: 100%; /* Adăugat */
+}
+
+.arrow {
+    position: absolute;
+    top: calc(50% - 25px);
+    font-size: 35px;
+    padding: 10px;
+    user-select: none;
+    border: none;
+    background: none;
+    color: black;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    outline: none;
+}
+
+.arrow:hover {
+    opacity: 1;
+}
+
+#leftArrow {
+    left: 0; /* Modificat */
+}
+
+#rightArrow {
+    right: 0; /* Modificat */
+}
+
+#picSelector {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    display: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adăugat */
+}
