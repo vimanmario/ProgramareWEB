@@ -7,7 +7,9 @@ const port = process.env.PORT || 3029;
 const server = http.createServer((req, res) => {
     let filePath = './public' + req.url; // Amend the file path to match your directory structure
     if (filePath === './public/') {
-        filePath = './public/index.html';
+        filePath = './public/HTML/index.html';
+    } else{
+
     }
 
     const extname = path.extname(filePath);
