@@ -5,27 +5,26 @@ const path = require('path');
 const port = process.env.PORT || 3029;
 
 const server = http.createServer((req, res) => {
-    let filePath = './public' + req.url; // Amend the file path to match your directory structure
-    if (filePath === './public/') {
-        filePath = './public/HTML/index.html';
-    } else{
+    let filePath = '';
 
+    // Setarea caii de acces în funcție de extensia fișierului
+    if (req.url.endsWith('.html')) {
+        filePath = `./public/HTML${req.url}`;
+    } else if (req.url.endsWith('.css')) {
+        filePath = `./public/CSS${req.url}`;
+    } else if (req.url.endsWith('.js')) {
+        filePath = `./public/JS${req.url}`;
+    } else {
+        // Dacă cererea este pentru un director, încărcăm index.html implicit
+        if (req.url.endsWith('/')) {
+            filePath = `./public/HTML${req.url}index.html`;
+        } else {
+            // Altfel, căutăm fișierele în directorul public corespunzător extensiei
+            filePath = `./public${req.url}`;
+        }
     }
 
-    const extname = path.extname(filePath);
-    let contentType = 'text/html';
-    switch (extname) {
-        case '.js':
-            contentType = 'text/javascript';
-            break;
-        case '.css':
-            contentType = 'text/css';
-            break;
-        case '.png':
-            contentType = 'image/png';
-            break;
-    }
-
+    // Citirea și servirea fișierului
     fs.readFile(filePath, (err, data) => {
         if (err) {
             if (err.code === 'ENOENT') {
@@ -36,6 +35,14 @@ const server = http.createServer((req, res) => {
                 res.end('Internal Server Error');
             }
         } else {
+            // Determinarea tipului de conținut
+            let contentType = 'text/html';
+            if (filePath.endsWith('.css')) {
+                contentType = 'text/css';
+            } else if (filePath.endsWith('.js')) {
+                contentType = 'text/javascript';
+            }
+
             res.writeHead(200, {'Content-Type': contentType});
             res.end(data);
         }
