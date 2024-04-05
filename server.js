@@ -11,9 +11,11 @@ const server = http.createServer((req, res) => {
     if (req.url.endsWith('.html')) {
         filePath = `./public/HTML${req.url}`;
     } else if (req.url.endsWith('.css')) {
-        filePath = `./public/CSS${req.url}`;
+        // Ajustarea caii pentru fișierele CSS
+        filePath = `./public${req.url}`;
     } else if (req.url.endsWith('.js')) {
-        filePath = `./public/JS${req.url}`;
+        // Ajustarea caii pentru fișierele JS
+        filePath = `./public${req.url}`;
     } else {
         // Dacă cererea este pentru un director, încărcăm index.html implicit
         if (req.url.endsWith('/')) {
@@ -23,6 +25,9 @@ const server = http.createServer((req, res) => {
             filePath = `./public${req.url}`;
         }
     }
+
+    // Afișare calea fișierului încercat
+    console.log('Calea fișierului încercat:', filePath);
 
     // Citirea și servirea fișierului
     fs.readFile(filePath, (err, data) => {
