@@ -3,17 +3,17 @@ publish = "public"  # directorul în care se află fișierele statice
 
 [[redirects]]
 from = "/HTML/*"
-to = "/HTML/:splat"
+to = "/public/HTML/:splat"
 status = 200
 
 [[redirects]]
 from = "/CSS/*"
-to = "/CSS/:splat"
+to = "/public/CSS/:splat"
 status = 200
 
 [[redirects]]
 from = "/JS/*"
-to = "/JS/:splat"
+to = "/public/JS/:splat"
 status = 200
 
 [[headers]]
