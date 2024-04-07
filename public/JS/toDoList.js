@@ -1,3 +1,6 @@
+// Array cu numele persoanelor
+var people = ['Crisan', 'Iulian', 'Mario'];
+
 function allowDrop(event) {
     event.preventDefault();
     console.log("allowDrop event triggered");
@@ -46,6 +49,16 @@ function addTask() {
     newTask.setAttribute("id", "task" + Date.now()); // Unique ID for each task
     newTask.addEventListener("dragstart", drag); // Add drag event listener here
 
+    // Creăm butonul "..." pentru asignare
+    var assignButton = document.createElement("button");
+    assignButton.textContent = "...";
+    assignButton.addEventListener("click", function() {
+        showAssignMenu(newTask);
+    });
+
+    // Adăugăm butonul de asignare la task
+    newTask.appendChild(assignButton);
+
     // Adăugăm evenimentul de clic pentru fiecare task
     newTask.addEventListener("click", function(event) {
         // Deselectăm toate task-urile din lista
@@ -54,7 +67,7 @@ function addTask() {
             t.classList.remove("selected");
         });
 
-        // Selectăm task-ul clicat și adăugăm clasa `.selected`
+        // Selectăm task-ul clicat
         event.target.classList.add("selected");
     });
 
@@ -62,6 +75,32 @@ function addTask() {
     document.getElementById("assignedList").appendChild(newTask);
 
     taskInput.value = "";
+}
+
+// Funcție pentru afișarea meniului de asignare
+function showAssignMenu(taskElement) {
+    var assignMenu = document.createElement("select");
+    people.forEach(function(person) {
+        var option = document.createElement("option");
+        option.value = person;
+        option.textContent = person;
+        assignMenu.appendChild(option);
+    });
+
+    // Adăugăm un eveniment pentru alegerea unei persoane din meniu
+    assignMenu.addEventListener("change", function() {
+        assignTaskToPerson(taskElement, this.value);
+    });
+
+    // Înlocuim butonul "..." cu meniul de asignare
+    var assignButton = taskElement.querySelector("button");
+    taskElement.replaceChild(assignMenu, assignButton);
+}
+
+// Funcție pentru asignarea unei persoane la task
+function assignTaskToPerson(taskElement, person) {
+    // Adăugăm numele persoanei ca atribut al task-ului
+    taskElement.setAttribute("data-assigned-to", person);
 }
 
 // Funcția pentru actualizarea listelor în celelalte coloane
@@ -87,17 +126,27 @@ function moveNext(currentColumn) {
     // Verificăm dacă există vreun task selectat în coloana curentă
     var selectedTask = currentList.querySelector(".selected");
     if (selectedTask) {
-        // Mutăm task-ul selectat în coloana următoare
+        // Obținem asignarea corespunzătoare task-ului selectat
+        var assignment = selectedTask.getAttribute("data-assigned-to");
+
+        // Mutăm task-ul și asignarea selectate în coloana următoare
         currentList.removeChild(selectedTask);
         nextList.appendChild(selectedTask);
-
-        // Anulăm selecția task-ului după mutare
-        selectedTask.classList.remove("selected");
+        selectedTask.removeAttribute("data-assigned-to"); // Ștergem asignarea
 
         // Actualizăm listele de task-uri în coloane
         updateTaskList(currentColumn);
         updateTaskList(nextColumn);
         updateOtherColumns(selectedTask.id, currentColumn);
+
+        // Dacă există asignare, o refacem în coloana următoare
+        if (assignment) {
+            var assignedTask = nextList.querySelector("[id='" + selectedTask.id + "']");
+            assignedTask.setAttribute("data-assigned-to", assignment);
+        }
+
+        // Anulăm selecția task-ului după mutare
+        selectedTask.classList.remove("selected");
     }
 }
 
@@ -110,6 +159,7 @@ nextButtons.forEach(function(button) {
     });
 });
 
+// Funcție pentru a obține următoarea coloană
 function getNextColumn(currentColumn) {
     switch (currentColumn) {
         case "assigned":
@@ -121,6 +171,7 @@ function getNextColumn(currentColumn) {
     }
 }
 
+// Adăugăm evenimentele de tragere și fixare pentru listele de task-uri
 var todoLists = document.querySelectorAll(".todo-list");
 todoLists.forEach(function(list) {
     list.addEventListener("drop", function(event) {
