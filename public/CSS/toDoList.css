@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.todo-column {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 30%;
+    background-color: #f9f9f9;
+}
+
+.todo-column h3 {
+    text-align: center;
+}
+
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-list li {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.todo-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.todo-list li.selected {
+    background-color: #eaf6ff; /* Schimbă culoarea de fundal pentru task-uri selectate */
+    border-color: #4a90e2; /* Schimbă culoarea marginii pentru task-uri selectate */
+    color: #333; /* Schimbă culoarea textului pentru o mai bună vizibilitate */
+}
+
+
+.add-task {
+    margin-top: 20px;
+}
+
+.add-task input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.add-task button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+.add-task button:hover {
+    background-color: #45a049;
+}
