@@ -23,14 +23,17 @@ app.post("/sign_up", (req, res) => {
         password
     });
 
-    newUser.save((err) => {
-        if (err) {
-            console.error("Error saving user:", err);
-            return res.status(500).send("Error saving user");
-        }
+    newUser.save().then(() => {
         console.log("Record Inserted Successfully");
-        return res.redirect('/signup_success.html');
+        return res.redirect('/signup_succes.html');
+    }).catch((err) => {
+        console.error("Error saving user:", err);
+        return res.status(500).send("Error saving user");
     });
+});
+
+app.get("/signup_succes.html", (req, res) => {
+    return res.sendFile(path.join(__dirname, 'public', 'signup_succes.html'));
 });
 
 app.get("/", (req, res) => {
