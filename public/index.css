@@ -1,6 +1,6 @@
 /* Stilurile pentru bara de navigare */
 nav {
-    background-color: #F33636; /* culoare de fundal */
+    background-color: #CC00CC; /* culoare de fundal */
     color: #fff; /* culoare text */
     padding: 15px 0; /* spațiere între text și marginea bara de navigare */
     position: fixed; /* bara de navigare să fie fixată în partea de sus */
@@ -47,7 +47,7 @@ header {
     text-align: center; /* aliniere text la centru */
     padding: 200px 0; /* spațiere top și bottom */
     color: #fff;
-    background-color: #F33636; /* rosu aprins */
+    background-color: #CC00CC;
     width: 100.9vw;
     margin-left: calc(-2.5vw); /* compensarea marginii negative */
 }
