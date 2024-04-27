@@ -34,10 +34,10 @@ function toggleAndHighlight(link) {
 }
 
 // Funcție pentru a activa butonul "Acasă" la încărcarea paginii
-window.onload = function() {
+window.addEventListener('load', function() {
     var homeButton = document.querySelector('.nav-link');
     toggleActive(homeButton);
-};
+});
 
 /// Funcție pentru afișarea opțiunilor dropdown
 function showOptions(containerId) {
@@ -50,3 +50,8 @@ function hideOptions(containerId) {
     var dropdownOptions = document.getElementById(containerId).querySelector('.dropdown-options');
     dropdownOptions.style.display = "none";
 }
+
+// Adaugă un eveniment pentru a reseta starea de hover a link-urilor la părăsirea paginii
+window.addEventListener('unload', function() {
+    resetHoverState();
+});

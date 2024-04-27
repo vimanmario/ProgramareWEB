@@ -5,61 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proiectare WEB</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="/index.css">
-    <script src="/index.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="nav-bar.css">
+    <script src="index.js"></script>
+    <script src="nav-bar.js"></script>
 </head>
 <body>
-
-<!-- Bara de Navigare -->
-<nav>
-    <ul>
-        <li><a href="#" class="nav-link" onclick="toggleAndHighlight(this)">Acasă</a></li>
-        <li><a href="lab1.html" class="nav-link" onclick="toggleAndHighlight(this)">Lab 1</a></li>
-        <!-- Container pentru Lab 2 -->
-        <li id="lab2-container" class="nav-item">
-            <a href="#" class="nav-link" onmouseover="showOptions('lab2-container')" onmouseout="hideOptions('lab2-container')">Lab 2</a>
-            <!-- Opțiuni pentru Lab 2 -->
-            <ul id="lab2-options" class="dropdown-options" onmouseover="showOptions('lab2-container')" onmouseout="hideOptions('lab2-container')">
-                <li><a href="listaProduse.html">Lista produse</a></li>
-                <li><a href="orarulGrupei.html">Orarul grupei</a></li>
-            </ul>
-        </li>
-        <!-- Container pentru Lab 3 -->
-        <li id="lab3-container" class="nav-item">
-            <a href="#" class="nav-link" onmouseover="showOptions('lab3-container')" onmouseout="hideOptions('lab3-container')">Lab 3</a>
-            <!-- Opțiuni pentru Lab 3 -->
-            <ul id="lab3-options" class="dropdown-options" onmouseover="showOptions('lab3-container')" onmouseout="hideOptions('lab3-container')">
-                <li><a href="calendar.html">Calendar</a></li>
-                <li><a href="inventar.html">Inventar</a></li>
-            </ul>
-        </li>
-        <!-- Container pentru Lab 4 -->
-        <li id="lab4-container" class="nav-item">
-            <a href="#" class="nav-link" onmouseover="showOptions('lab4-container')" onmouseout="hideOptions('lab4-container')">Lab 4</a>
-            <!-- Opțiuni pentru Lab 4 -->
-            <ul id="lab4-options" class="dropdown-options" onmouseover="showOptions('lab4-container')" onmouseout="hideOptions('lab4-container')">
-                <li><a href="tabelCarti.html">Tabel Carti</a></li>
-                <li><a href="sliderImagini.html">Slider Imagini</a></li>
-            </ul>
-        </li>
-        <!-- Container pentru Lab 5 -->
-        <li id="lab5-container" class="nav-item">
-            <a href="#" class="nav-link" onmouseover="showOptions('lab5-container')" onmouseout="hideOptions('lab5-container')">Lab 5</a>
-            <!-- Opțiuni pentru Lab 5 -->
-            <ul id="lab5-options" class="dropdown-options" onmouseover="showOptions('lab5-container')" onmouseout="hideOptions('lab5-container')">
-                <li><a href="titluriSiBorder.html">Titluri si border</a></li>
-                <li><a href="#">--</a></li>
-            </ul>
-        </li>
-        <li><a href=toDoList.html class="nav-link" onclick="toggleAndHighlight(this)">Lab 6</a></li>
-        <li><a href="contactForm.html" class="nav-link" onclick="toggleAndHighlight(this)">Lab 7</a></li>
-        <li><a href="authentication.html" class="nav-link" onclick="toggleAndHighlight(this)">Lab 8</a></li>
-        <li><a href="weather.html" class="nav-link" onclick="toggleAndHighlight(this)">Lab 9</a></li>
-        <li><a href="currencyConverter.html" class="nav-link" onclick="toggleAndHighlight(this)">Lab 10</a></li>
-        <li><a href="emojiCatcher.html" class="nav-link" onclick="toggleAndHighlight(this)">Lab 11</a></li>
-        <li><a href="cryptoTracker.html" class="nav-link" onclick="toggleAndHighlight(this)">Lab 12</a></li>
-    </ul>
-</nav>
 
 <!-- Antet (Header) -->
 <header>

@@ -1,0 +1,6 @@
+/* Stilurile pentru conținut */
+body {
+    padding-top: 80px; /* spațiu deasupra conținutului pentru a se afișa sub bara de navigare */
+    background: linear-gradient(#CC00CC, #fff7f9); /* gradient de fundal */
+    background-attachment: fixed; /* fixarea gradientului pentru a rămâne pe ecran pe măsură ce derulezi pagina */
+}
