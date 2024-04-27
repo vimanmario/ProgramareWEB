@@ -1,4 +1,3 @@
-// Array cu numele persoanelor
 var people = ['Crisan', 'Iulian', 'Mario'];
 
 function allowDrop(event) {

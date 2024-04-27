@@ -1,3 +1,9 @@
+body {
+    padding-top: 80px;
+    background: linear-gradient(#CC00CC, #fff7f9);
+    background-attachment: fixed;
+}
+
 #calendar {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Afișează 3 luni pe rând */
@@ -5,6 +11,7 @@
 }
 
 .month {
+    background-color: #FFFFFF;
     border: 1px solid #ccc;
     padding: 10px;
 }

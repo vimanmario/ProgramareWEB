@@ -1,4 +1,11 @@
+body {
+    padding-top: 80px;
+    background: linear-gradient(#CC00CC, #fff7f9);
+    background-attachment: fixed;
+}
+
 table {
+    background-color: #dddddd;
     border-collapse: collapse;
     width: 100%;
 }

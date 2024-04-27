@@ -1,66 +1,66 @@
-/* Stilurile pentru bara de navigare */
+/* bara de navigare */
 nav {
-    background-color: #CC00CC; /* culoare de fundal */
-    color: #fff; /* culoare text */
-    padding: 15px 0; /* spațiere între text și marginea bara de navigare */
-    position: fixed; /* bara de navigare să fie fixată în partea de sus */
-    width: 100%; /* să ocupe întreaga lățime a paginii */
-    top: 0; /* poziționare de sus */
-    left: 0; /* poziționare de la stânga */
+    background-color: #CC00CC;
+    color: #fff;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); /* adăugăm o umbră subtilă */
     z-index: 999; /* asigurăm că bara de navigare este deasupra antetului */
 
 }
 
-/* Stilurile pentru lista de navigare */
+/* pentru lista de navigare */
 nav ul {
     list-style-type: none; /* eliminarea marcatorilor listei */
-    margin: 0; /* eliminarea marginilor implicite */
-    padding: 0; /* eliminarea spatiilor implicite */
-    text-align: center; /* alinierea textului la centru */
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
-/* Stilurile pentru fiecare element de navigare */
+/* pentru fiecare element de navigare */
 nav ul li {
     display: inline; /* afișarea elementelor pe aceeași linie */
-    margin: 0; /* spațiere între elemente */
-    margin-right: -4px; /* spatiu negativ intre butoane */
+    margin: 0;
+    margin-right: -4px;
     width: calc(100% / 14); /* lățimea fiecărui element li să fie 100% / numărul total de butoane */
 }
 
-/* Stilurile pentru link-urile de navigare */
+/* link-urile de navigare */
 nav ul li a {
     text-decoration: none; /* eliminarea sublinierii link-urilor */
-    color: #fff; /* culoare text */
-    font-weight: bold; /* text bold */
-    padding: 15px; /* spațiul din interiorul butonului */
+    color: #fff;
+    font-weight: bold;
+    padding: 15px;
     transition: none;
 }
 
-/* Stilurile pentru link-urile de navigare cand mouse-ul este deasupra */
+/* link-urile de navigare cand mouse-ul este deasupra */
 nav ul li a:hover {
-    background-color: #fff; /* culoare de fundal albă */
-    color: #000; /* culoare text neagră */
+    background-color: #fff;
+    color: #000;
 }
 
 .nav-link {
     text-decoration: none; /* eliminarea sublinierii link-urilor */
-    color: #fff; /* culoare text */
-    font-weight: bold; /* text bold */
-    margin: 0; /* spațiere între butoane */
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
 }
 
-/* Stilurile pentru butonul activ */
+/* butonul activ */
 .nav-link.active {
-    background-color: #fff; /* culoare de fundal albă */
-    color: #000; /* culoare text */
+    background-color: #fff;
+    color: #000;
 }
 
 .nav-item {
     position: relative; /* Poziționare relativă pentru containerul Lab 2 */
 }
 
-/* Stilizarea opțiunilor dropdown */
+/* opțiunile dropdown */
 .dropdown-options {
     display: none;
     position: absolute;
@@ -78,11 +78,11 @@ nav ul li a:hover {
 }
 
 .dropdown-options li a {
-    color: #000; /* Setează culoarea textului la negru */
+    color: #000;
     text-decoration: none; /* Elimină sublinierea link-urilor */
     display: block; /* Face ca link-urile sa fie afisate ca blocuri */
-    padding: 8px 12px; /* Spatiere mai mica in jurul textului */
-    font-size: 14px; /* Dimensiunea fontului mai mica */
+    padding: 8px 12px;
+    font-size: 14px;
 }
 
 .dropdown-options li:hover {

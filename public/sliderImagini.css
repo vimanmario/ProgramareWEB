@@ -1,3 +1,9 @@
+body {
+    padding-top: 80px;
+    background: linear-gradient(#CC00CC, #fff7f9);
+    background-attachment: fixed;
+}
+
 .slider {
     position: relative;
     width: 600px; /* Dimensiunea fixă a chenarului */

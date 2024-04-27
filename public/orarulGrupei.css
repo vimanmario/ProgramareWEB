@@ -1,7 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 10px;
-    padding: 0;
+    padding-top: 60px;
+    background: linear-gradient(#CC00CC, #fff7f9);
+    background-attachment: fixed;
 }
 
 .scrollable {
@@ -10,9 +11,7 @@ body {
 }
 
 table {
-    /* width: auto; */ /* Eliminat pentru a bloca extinderea pe orizontală */
     border-collapse: collapse;
-    /*overflow-x: auto;*/ /* Activare scroll orizontal */
     overflow-y: auto;
     height: 100%;
 }
@@ -22,16 +21,14 @@ table, th, td {
 }
 
 th, td {
-    padding: 8px; /* Redus padding-ul pentru a face celulele mai mici */
+    background-color: #dddddd;
+    padding: 8px;
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 12px;
 }
 
-th {
-    background-color: #f2f2f2;
-}
 
 .group-name {
     text-align: center;
@@ -53,7 +50,7 @@ th {
     border-bottom: 1px solid #ccc; /* adăugăm o linie între activități */
 }
 
-/* stil pentru a face prima activitate să fie sus și a doua activitate să fie jos */
+/* prima activitate să fie sus și a doua activitate să fie jos */
 .split-content:nth-child(2) {
     top: 50%;
 }

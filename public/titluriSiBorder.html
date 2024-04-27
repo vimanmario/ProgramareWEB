@@ -4,46 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titluri de cărți</title>
-    <style>
-        /* Eliminarea marcatorilor din listă pentru ambele variante */
-        .bookList {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        /* Stil pentru secțiunea de text */
-        #textSection {
-            border-top: 2px solid black; /* Border deasupra secțiunii */
-            border-left: 2px solid black;
-            border-right: 2px solid black;
-            border-bottom: 2px solid black;
-            padding: 10px;
-            margin-top: 20px;
-            background-color: lightblue; /* Culoare de fundal inițială */
-            transition: background-color 0.5s; /* Efect de tranziție pentru schimbarea culorii de fundal */
-        }
-    </style>
+    <link rel="stylesheet" href="titluriSiBorder.css">
+    <link rel="stylesheet" href="nav-bar.css">
+    <script src="index.js"></script>
+    <script src="nav-bar.js"></script>
 </head>
 <body>
 
-<!-- Secțiunea de text -->
 <div id="textSection">
     <p>Border care se schimba la fiecare 3s.</p>
 </div>
 
 <h2>Titluri de cărți - Sincron</h2>
-
-<ul id="bookList" class="bookList">
-    <!-- Aici vor fi adăugate titlurile de cărți pentru varianta sincronă -->
-</ul>
+<ul id="bookList" class="bookList"></ul>
 
 <h2>Titluri de cărți - Asincron</h2>
+<ul id="asyncBookList" class="bookList"></ul>
 
-<ul id="asyncBookList" class="bookList">
-    <!-- Aici vor fi adăugate titlurile de cărți pentru varianta asincronă -->
-</ul>
-
-<script src="/titluriSiBorder.js"></script>
+<script src="titluriSiBorder.js"></script>
 
 </body>
 </html>
