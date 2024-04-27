@@ -1,65 +1,46 @@
-#picFrame {
+.slider {
     position: relative;
+    width: 600px; /* Dimensiunea fixă a chenarului */
+    height: 400px; /* Înălțimea fixă a chenarului */
+    margin: auto;
+    margin-top: 100px;
     overflow: hidden;
-    margin: 100px auto 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 800px;
-    height: 550px;
-    outline: solid 2px black;
-    position: relative; /* Adăugat */
+    border: 1px solid #ccc; /* Adăugăm un chenar în jurul slider-ului */
 }
 
-.pic {
-    position: absolute;
-    transition: left 0.3s;
-    width: 100%; /* Adăugat */
-    height: 100%; /* Adăugat */
-}
-
-.arrow {
-    position: absolute;
-    top: calc(50% - 25px);
-    font-size: 35px;
-    padding: 10px;
-    user-select: none;
-    border: none;
-    background: none;
-    color: black;
-    cursor: pointer;
-    opacity: 0.5;
-    transition: opacity 0.3s;
-    outline: none;
-}
-
-.arrow:hover {
-    opacity: 1;
-}
-
-#leftArrow {
-    left: 0; /* Modificat */
-}
-
-#rightArrow {
-    right: 0; /* Modificat */
-}
-
-#picSelector {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-}
-
-.dot {
+.slider img {
+    width: 100%; /* Imaginile vor umple întreaga lățime a chenarului */
+    height: auto; /* Înălțimea se va adapta proporțional la lățimea imaginii */
     display: none;
 }
 
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Adăugat */
+img.displaySlide {
+    display: block;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    padding: 10px 15px;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+@keyframes fade {
+    from {opacity: .5}
+    to {opacity: 1}
 }

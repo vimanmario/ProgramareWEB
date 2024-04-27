@@ -1,40 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Image Slider</title>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/sliderImagini.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="sliderImagini.css">
 </head>
 <body>
-<div id="picFrame">
-    <div id="pic1" class="pic">
-        <img src="/enamel.png" alt="">
-    </div>
-    <div id="pic2" class="pic">
-        <img src="/field_with_flowers.png" alt="">
-    </div>
-    <div id="pic3" class="pic">
-        <img src="/flowers_24bits.png" alt="">
-    </div>
-    <div id="pic4" class="pic">
-        <img src="/letters.png" alt="">
-    </div>
 
-    <button id="leftArrow" class="arrow">&#10094</button>
-    <button id="rightArrow" class="arrow">&#10095</button>
+<div class="slider">
+    <div class="slides">
+        <img class="slide" src="enamel.png" alt="Image #1">
+        <img class="slide" src="field_with_flowers.png" alt="Image #2">
+        <img class="slide" src="flowers_24bits.png" alt="Image #3">
+        <img class="slide" src="letters.png" alt="Image #3">
+    </div>
+    <button class="prev" onclick="prevSlide()">&#10094</button>
+    <button class="next" onclick="nextSlide()">&#10095</button>
+</div>
 
-    <form id="picSelector">
-        <input id="dot1" class="dot" type="radio" name="dot" checked>
-        <label for="dot1"></label>
-        <input id="dot2" class="dot" type="radio" name="dot">
-        <label for="dot2"></label>
-        <input id="dot3" class="dot" type="radio" name="dot">
-        <label for="dot3"></label>
-        <input id="dot4" class="dot" type="radio" name="dot">
-        <label for="dot4"></label>
-    </form>
-</div> <!-- id="picFrame" -->
-<script src="/sliderImagini.js"></script>
+<script src="sliderImagini.js"></script>
 </body>
 </html>

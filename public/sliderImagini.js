@@ -1,41 +1,37 @@
-const pics = document.querySelectorAll(".pic");
-const dots = document.querySelectorAll(".dot");
+const slides = document.querySelectorAll(".slides img");
+let slideIndex = 0;
+let intervalId = null;
 
-// Initialize the current picture number
-let currentPic = 0;
+document.addEventListener("DOMContentLoaded", initializeSlider);
 
-function displayPic(newNum) {
-    if (newNum < 1 || newNum > pics.length) return;
+function initializeSlider(){
+    if(slides.length > 0){
+        slides[slideIndex].classList.add("displaySlide");
+        intervalId = setInterval(nextSlide, 5000);
+    }
+}
 
-    // Move each image accordingly
-    pics.forEach((pic, index) => {
-        pic.style.left = `${(index - (newNum - 1)) * 800}px`;
+function showSlide(index){
+    if(index >= slides.length){
+        slideIndex = 0;
+    }
+    else if(index < 0){
+        slideIndex = slides.length - 1;
+    }
+
+    slides.forEach(slide => {
+        slide.classList.remove("displaySlide");
     });
-
-    currentPic = newNum;
-
-    // Check the corresponding dot
-    dots[currentPic - 1].checked = true;
+    slides[slideIndex].classList.add("displaySlide");
 }
 
-function moveLeft() {
-    const newNum = (currentPic - 2 + pics.length) % pics.length + 1;
-    displayPic(newNum);
+function prevSlide(){
+    clearInterval(intervalId);
+    slideIndex--;
+    showSlide(slideIndex);
 }
 
-function moveRight() {
-    const newNum = currentPic % pics.length + 1;
-    displayPic(newNum);
+function nextSlide(){
+    slideIndex++;
+    showSlide(slideIndex);
 }
-
-document.querySelector("#leftArrow").addEventListener("click", moveLeft);
-document.querySelector("#rightArrow").addEventListener("click", moveRight);
-
-for (let i = 0; i < dots.length; i++) {
-    dots[i].addEventListener("click", function() {
-        displayPic(i + 1);
-    });
-}
-
-// la prima glisare totul de produce instant (ramane de rezolvat asta)
-// ori anulam glisarea la toate :))
