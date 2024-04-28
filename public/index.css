@@ -48,10 +48,13 @@ footer {
     align-items: center;
 }
 
-.left-content,
+.left-content{
+    padding-left: 25%;
+}
+
+
 .right-content {
-    flex: 1; /* Le face să se extindă pe întreaga lățime disponibilă */
-    text-align: center; /* Aliniere text la centru */
+    padding-right: 15%;
 }
 
 .left-text,
