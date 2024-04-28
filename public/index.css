@@ -1,6 +1,6 @@
-/* Stilurile pentru antet */
+/* antet */
 header {
-    text-align: center; /* aliniere text la centru */
+    text-align: center;
     padding: 200px 0; /* spațiere top și bottom */
     color: #fff;
     background-color: #CC00CC;
@@ -8,7 +8,7 @@ header {
     margin-left: calc(-2.5vw); /* compensarea marginii negative */
 }
 
-/* Stilurile pentru primul grid */
+/*  primul grid */
 .grid:nth-child(3) { /* selectăm al treilea element cu clasa .grid */
     background-color: #E0E0E0;
     padding: 60px;
@@ -18,7 +18,7 @@ header {
 
 /* Stilurile pentru al doilea grid */
 .grid:nth-child(4) { /* selectăm al patrulea element cu clasa .grid */
-    background-color: #C0C0C0; /* gri deschis */
+    background-color: #C0C0C0;
     padding: 90px;
     width: 89.1vw;
     margin-left: calc(-2.5vw); /* compensarea marginii negative */
@@ -34,29 +34,38 @@ footer {
     margin-top: 20px; /* adaugăm o margine superioară */
 }
 
-/* Stilurile pentru iconițele din footer */
+/* iconițele din footer */
 .footer a {
-    color: #000; /* culoare pentru iconițe */
-    font-size: 24px; /* dimensiunea fontului pentru iconițe */
-    margin:  10px; /* spațiere între iconițe */
+    color: #000;
+    font-size: 24px;
+    margin:  10px;
 }
 
-/* Stiluri pentru textul mare */
+/* CSS adăugat aici */
+.text-and-icon-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-content,
+.right-content {
+    flex: 1; /* Le face să se extindă pe întreaga lățime disponibilă */
+    text-align: center; /* Aliniere text la centru */
+}
+
+.left-text,
+.right-text {
+    font-size: 18px;
+    margin: 0; /* Elimină marginile pentru a asigura centrarea verticală */
+}
+
 .large-text {
     font-size: 24px;
 }
 
-.left-text{
-    padding-left: 25%;
-}
-
-/* Stilurile pentru iconițele din primul grid */
+/* Iconita din primul grid */
 .icon {
-    position: absolute; /* Poziționare absolută pentru a nu afecta layout-ul */
-    padding-left: 700px; /* Distanța de la marginea dreaptă */
-    top: 95%;
-    transform: translateY(-50%); /* Ajustare pentru a centra vertical iconița */
-    color: #333; /* Culorează iconița */
-    font-size: 200px; /* Mărimea fontului pentru iconiță */
+    color: #333;
+    font-size: 200px;
 }
-

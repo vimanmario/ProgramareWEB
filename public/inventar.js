@@ -1,5 +1,12 @@
 let inventory = [];
 
+document.addEventListener("DOMContentLoaded", function() {
+    const storedInventory = localStorage.getItem("inventory");
+    inventory = storedInventory ? JSON.parse(storedInventory) : [];
+
+    displayInventory();
+});
+
 function displayInventory() {
     const table = document.getElementById("inventory");
     table.innerHTML = `
@@ -35,12 +42,12 @@ function addProduct() {
     if (name && !isNaN(price) && !isNaN(quantity)) {
         const existingProductIndex = inventory.findIndex(product => product.name === name && product.price === price);
         if (existingProductIndex !== -1) {
-            // Product already exists, update its quantity
             inventory[existingProductIndex].quantity += quantity;
         } else {
-            // Product doesn't exist, add it to inventory
             inventory.push({ name, price, quantity });
         }
+        // Salvăm inventarul actualizat în localStorage
+        localStorage.setItem("inventory", JSON.stringify(inventory));
         displayInventory();
     } else {
         alert("Vă rugăm să completați toate câmpurile corect!");
@@ -53,6 +60,8 @@ function updateProduct(name) {
         const index = inventory.findIndex(product => product.name === name);
         if (index !== -1) {
             inventory[index].quantity = parseInt(newQuantity);
+            // Salvăm inventarul actualizat în localStorage
+            localStorage.setItem("inventory", JSON.stringify(inventory));
             displayInventory();
         } else {
             alert(`Produsul "${name}" nu există în inventar.`);
@@ -64,9 +73,9 @@ function deleteProduct(name) {
     const confirmation = confirm(`Sigur doriți să ștergeți produsul "${name}" din inventar?`);
     if (confirmation) {
         inventory = inventory.filter(product => product.name !== name);
+        localStorage.setItem("inventory", JSON.stringify(inventory));
         displayInventory();
     }
 }
 
-// Initial display
 displayInventory();
